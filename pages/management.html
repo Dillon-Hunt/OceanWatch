@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Management</title>
+
+    <link rel='stylesheet' href='../styles/index.css'>
+    <link rel='stylesheet' href='../styles/management.css'>
+
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+    <script>
+        if (sessionStorage.getItem('token') === null) window.location = './guest_map.html'
+        else if (!Number(sessionStorage.getItem('verified'))) window.location = './public_map.html'
+
+        async function validate_user() {
+            const headers_list = {
+                "Accept": "*/*",
+                "Content-Type": "application/json"
+            }
+
+            const body_content = JSON.stringify({
+                "token": sessionStorage.getItem('token')
+            })
+
+            response = await fetch("http://localhost:3005/auth/validate", { method: 'POST', body: body_content, headers: headers_list })
+                .then(response => {
+                    if (response.status === 401) {
+                        sessionStorage.clear()
+                        window.location.href = '../pages/guest_map.html'
+                    } else {
+                        response.json().then(data => {
+                            if (!data.verified) {
+                                window.location.href = '../pages/login.html'
+                            }
+                        })
+                    }
+                })
+                .catch((error) => console.error(error))
+        }
+
+        validate_user()
+    </script>
+
+    <div class="manage">
+        <h2>Manage</h2>
+        <div class="manage__links">
+            <a href="./import_attacks.html">Import Attack Data</a>
+            <a href="./admin_map.html">Return to Map</a>
+        </div>
+        <h3>Recent Sightings</h3>
+        <div class='sightings'>
+
+        </div>
+    </div>
+
+    <script> 
+
+        async function list_sighting() {
+
+            // Get sightings from database
+            const sightings = await fetch(`http://localhost:3005/sightings?year=1}`, { method: 'GET' })
+                .then(response => response.json()
+                .then(data => data)
+                .catch((error) => console.error(error)))
+
+            // Reverse array to get most recent first
+            sightings.reverse()
+
+            // Loop through each and display them
+            sightings.forEach(sighting => {
+                // Create sighting element
+                const container = document.createElement('div')
+                const username = document.createElement('p')
+                const delete_button = document.createElement('button')
+
+                // When the delete butting is fetched notify the API
+                delete_button.onclick = () => {
+                    fetch(`http://localhost:3005/sightings/${sighting.sighting_id}}`, { method: 'POST' }).then(() => {
+                        window.location.reload()
+                    })
+                }
+                username.textContent = sighting.username
+                delete_button.textContent = 'Delete'
+                container.appendChild(username)
+                container.appendChild(delete_button)
+
+                // Add to sightings table
+                document.querySelector('.sightings').appendChild(container)
+            })
+        }
+
+        // Call list_sighting() function
+        list_sighting()
+        
+    </script>
+</body>
+</html>

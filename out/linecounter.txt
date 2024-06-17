@@ -1,0 +1,50 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2023-04-17 14:43:44
+count workspace : /Users/DHunt/Programming/OceanWatch
+total files : 31
+total code lines : 1071
+total comment lines : 9
+total blank lines : 178
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |          .html|            445|              0|             71|     42|
+   |           .css|            384|              1|             58|     36|
+   |            .js|            242|              8|             49|     23|
+   -------------------------------------------------------------------------
+assets/hero.jpg, it is a binary file.
+index.html, code is 25, comment is 0, blank is 4.
+pages/admin_map.html, code is 61, comment is 0, blank is 11.
+pages/authentication.html, code is 21, comment is 0, blank is 2.
+pages/guest_map.html, code is 32, comment is 0, blank is 5.
+pages/import_attacks.html, code is 53, comment is 0, blank is 9.
+pages/login.html, code is 36, comment is 0, blank is 5.
+pages/manage_animals.html, code is 0, comment is 0, blank is 0.
+pages/manage_sharks.html, code is 0, comment is 0, blank is 0.
+pages/manage_species.html, code is 0, comment is 0, blank is 0.
+pages/manage_users.html, code is 0, comment is 0, blank is 0.
+pages/management.html, code is 45, comment is 0, blank is 7.
+pages/public_map.html, code is 61, comment is 0, blank is 10.
+pages/report_sighting.html, code is 40, comment is 0, blank is 7.
+pages/signup.html, code is 59, comment is 0, blank is 9.
+scripts/authentication.js, code is 29, comment is 0, blank is 5.
+scripts/create_map.js, code is 63, comment is 4, blank is 18.
+scripts/import_attacks.js, code is 39, comment is 1, blank is 8.
+scripts/login.js, code is 30, comment is 0, blank is 5.
+scripts/report_sighting.js, code is 12, comment is 1, blank is 3.
+scripts/signup.js, code is 39, comment is 0, blank is 6.
+scripts/utils.js, code is 30, comment is 2, blank is 4.
+styles/authentication.css, code is 18, comment is 0, blank is 1.
+styles/home.css, code is 66, comment is 0, blank is 7.
+styles/import_attacks.css, code is 53, comment is 0, blank is 9.
+styles/index.css, code is 42, comment is 1, blank is 7.
+styles/login_signup.css, code is 85, comment is 0, blank is 14.
+styles/management.css, code is 3, comment is 0, blank is 0.
+styles/map.css, code is 73, comment is 0, blank is 11.
+styles/report_sighting.css, code is 44, comment is 0, blank is 9.
+templates/template.html, code is 12, comment is 0, blank is 2.
+===============================================================================

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Sightings | Public Map</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+    <link rel='stylesheet' href='../styles/index.css'>
+    <link rel='stylesheet' href='../styles/map.css'>
+
+    <script defer src='../scripts/utils.js'></script>
+    <script defer src='../scripts/create_map_sightings.js'></script>
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+    <script>
+        if (sessionStorage.getItem('token') === null) window.location = './guest_map.html'
+        else if (Number(sessionStorage.getItem('verified'))) window.location = './admin_map.html'
+
+        async function validate_user() {
+            const headers_list = {
+                "Accept": "*/*",
+                "Content-Type": "application/json"
+            }
+
+            const body_content = JSON.stringify({
+                "token": sessionStorage.getItem('token')
+            })
+
+            response = await fetch("http://localhost:3005/auth/validate", { method: 'POST', body: body_content, headers: headers_list })
+                .then(response => {
+                    if (response.status === 401) {
+                        sessionStorage.clear()
+                        window.location.href = '../pages/guest_map.html'
+                    } else {
+                        response.json().then(data => {
+                            if (data.verified) {
+                                window.location.href = '../pages/login.html'
+                            }
+                        })
+                    }
+                })
+                .catch((error) => console.error(error))
+        }
+
+        validate_user()
+    </script>
+
+    <a class='view_sightings' href='./public_map.html'>View Attacks</a>
+
+    <div class="content">
+        <a class='bottom_left' href="./report_sighting.html">Report Sighting</a>
+    </div>
+
+    <div class="sighting">
+        <p class="sighting__longitude">Longitude: </p>
+        <p class="sighting__latitude">Latitude: </p>
+        <p class="sighting__date">Date: </p>
+    </div>
+
+    <div class='map' id='map'></div>
+</body>
+</html>

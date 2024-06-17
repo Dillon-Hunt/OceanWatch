@@ -1,0 +1,63 @@
+:root {
+    --dark-100: #16171d; /* Background */
+    --dark-90: #1c1c25; /* Section */
+    --dark-80: #292a2f; /* Overlay */
+    --dark-60: #474851; /* Disabled */
+    /* --light_blue: #6868d7; */
+    --purple: #7b62ff; /* Highlight */
+    --purple-80: #5742c1; /* Highlight */
+    --green: #2ccd70; /* Success */
+    --blue: #5dfae2; /* Info */
+    --yellow: #ffbd22; /* Warning */
+    --light_gray: #d9d9d9;
+    --white: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark-100);
+    color: var(--white);
+    font-family: Helvetica, sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+input, textarea {
+    border-radius: 5px;
+    padding: 8px;
+    border: 2px solid var(--green);
+    background-color: transparent;
+    color: var(--white);
+}
+
+input:invalid, textarea:invalid {
+    border-color: var(--dark-80);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px var(--dark-100);
+  }
+
+a {
+    text-decoration: none;
+    color: var(--purple);
+}
+
+.tab:focus {
+    background-color: red !important;
+}
+
+.government_logo {
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    height: 30px;
+    position: absolute;
+    filter: invert() contrast(100);
+}

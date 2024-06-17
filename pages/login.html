@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Log In</title>
+
+    <link rel='stylesheet' href='../styles/index.css' />
+    <link rel='stylesheet' href='../styles/login_signup.css' />
+
+    <script defer src="../scripts/utils.js"></script>
+    <script defer src="../scripts/login.js"></script>
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+    <section class='left'>
+        <a href='../index.html' class='back_arrow'>< Home</a>
+        <div class="fact">
+            <h2>DID YOU KNOW?</h2>
+            <p class="random_fact"></p>
+        </div>
+    </section>
+    <section class='right'>
+        <form class='user'>
+            <h1 class='user__title'>Log In</h1>
+
+            <div class='user__information'>
+                <div class='user__information__input'>
+                    <label for='username'>Username</label>
+                    <input placeholder='Enter Username' name='username' type="text" required />
+                </div>
+
+                <div class='user__information__input'>
+                    <label for='password'>Password</label>
+                    <input placeholder='Enter Password' name='password' type="password" required/>
+                </div>
+            </div>
+        
+            <div class='user__submit'>
+                <button class='user__submit__button' type="submit">Log In</button>
+                <a href='./signup.html'>Don't Have an Account?</a>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

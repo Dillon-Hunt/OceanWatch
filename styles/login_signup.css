@@ -1,0 +1,99 @@
+body {
+    height: 100vh;
+    background-color: var(--dark-100);
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 50vw;
+    height: calc(100% - 40px);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: var(--dark-90);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.back_arrow {
+    color: var(--white);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.fact {
+    text-align: center;
+}
+
+.random_fact {
+    font-weight: 400;
+    color: var(--light_gray);
+}
+
+.right {
+    width: 50vw;
+    height: 100%;
+    padding: 80px 160px;
+    background-color: var(--dark-100);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    width: 100%;
+}
+
+.user__title {
+    margin-bottom: 40px;
+}
+
+.user__information {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user__information__input {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user__information__input__name {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.user__information__input input {
+    width: 100%;
+}
+
+.user__submit {
+    margin-top: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user__submit__button {
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+}
+
+.user__submit a {
+    color: var(--white);
+}

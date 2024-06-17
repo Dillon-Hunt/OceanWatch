@@ -1,0 +1,113 @@
+body {
+    overflow: clip;
+}
+
+.view_sightings {
+    top: 30px;
+    left: 280px;
+    z-index: 100;
+    padding: 20px;
+    color: var(--white);
+    position: absolute;
+}
+
+.map {
+    width: 100vw;
+    height: 100vh;
+}
+
+.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-geocoder--powered-by {
+    display: none !important;
+}   
+
+.mapboxgl-ctrl-top-right {
+    right: auto;
+    top: 0;
+    left: 0;
+    margin: 0 !important;
+    float: left !important;
+}
+
+.mapboxgl-ctrl-geocoder {
+    top: 40px;
+    left: 40px;
+    margin: 0 !important;
+    float: left !important;
+}
+    
+.content {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+}
+
+.bottom_left {
+    bottom: 40px;
+    left: 40px;
+    font-size: 14px;
+    color: var(--white);
+    position: absolute;
+    pointer-events: all;
+}
+
+.top_right {
+    top: 40px;
+    right: 40px;
+    font-size: 14px;
+    color: var(--white);
+    position: absolute;
+    pointer-events: all;
+}
+
+.marker {
+    cursor: pointer;
+}
+
+.attack {
+    width: 20vw;
+    min-width: 400px;
+    top: 0;
+    right: 0;
+    translate: 100% 0;
+    z-index: 1;
+    border-radius: 10px 0 0 10px;
+    height: 100vh;
+    padding: 40px;
+    color: var(--white);
+    transition: .2s ease-in-out;
+    background-color: var(--dark-80);
+    position: absolute;
+}
+
+.sighting {
+    width: 20vw;
+    min-width: 400px;
+    top: 0;
+    right: 0;
+    translate: 100% 0;
+    z-index: 1;
+    border-radius: 10px 0 0 10px;
+    height: 100vh;
+    padding: 40px;
+    color: var(--white);
+    transition: .2s ease-in-out;
+    background-color: var(--dark-80);
+    position: absolute;
+}
+
+.attack.appear {
+    translate: 0 0;
+}
+
+.sighting.appear {
+    translate: 0 0;
+}
+
+.attack__image {
+    width: 100%;
+    min-height: 40px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Report Sighting</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel='stylesheet' href='../styles/index.css'>
+    <link rel='stylesheet' href='../styles/report_sighting.css'>
+
+    <script defer src='../scripts/report_sighting.js'></script>
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+    <div class='left'>
+        <div class='map' id='map'></div>
+    </div>
+    <div class='right'>
+        <form class='sighting'>
+            <h1 class='sighting__title'>Report Sighting</h1>
+
+            <div class='sighting__information'>
+                <div class='sighting__information__input__coordinates'>
+                    <div class='sighting__information__input'>
+                        <label for='longitude'>Longitude</label>
+                        <input placeholder='Enter Longitude' name='longitude' pattern="^-?\d+(\.\d+)?$" type='text' required />
+                    </div>
+
+
+                    <div class='sighting__information__input'>
+                        <label for='latitude'>Latitude</label>
+                        <input placeholder='Enter Latitude' name='latitude' pattern="^-?\d+(\.\d+)?$" type='text' required />
+                    </div>
+                </div>
+
+                <div class='sighting__information__input__date'>
+                    <div class='sighting__information__input'>
+                        <label for='time'>Time (24h)</label>
+                        <input placeholder='Enter Time' name='time' pattern="^\d{4}$" type='text' required />
+                    </div>
+
+
+                    <div class='sighting__information__input'>
+                        <label for='day'>Date</label>
+                        <input placeholder='Enter Date' name='day' pattern="^\d{1,2}$" type='text' required />
+                    </div>
+
+                    <div class='sighting__information__input'>
+                        <label for='month'>Month</label>
+                        <input placeholder='Enter Month' name='month' pattern="^\d{1,2}$" type='text' required />
+                    </div>
+
+                    <div class='sighting__information__input'>
+                        <label for='year'>Year</label>
+                        <input placeholder='Enter Year' name='year' pattern="^\d{4}$" type='text' required />
+                    </div>
+                </div>
+
+                <div class='sighting__information__input'>
+                    <label for='description'>Description (Optional)</label>
+                    <textarea placeholder='Describe Sighting' name='description' type='text'></textarea>
+                </div>
+
+                <div class='sighting__information__input'>
+                    <label for='description'>Distance From Shore</label>
+                    <input placeholder='Distance' name='distance' type='number' required />
+                </div>
+
+                <button class='sighting__information__submit'>Submit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        async function submit_sighting(e) {
+            // Stop page reloading
+            e.preventDefault()
+
+            // Define headers
+            const headers_list = {
+                "Accept": "*/*",
+                "Content-Type": "application/json"
+            }
+
+            // Get sighting information
+            const body_content = JSON.stringify({
+                token: sessionStorage.getItem('token'),
+                longitude: document.querySelector('input[name=longitude]').value,
+                latitude: document.querySelector('input[name=latitude]').value,
+                time: document.querySelector('input[name=time]').value,
+                day: document.querySelector('input[name=day]').value,
+                month: document.querySelector('input[name=month]').value,
+                year: document.querySelector('input[name=year]').value,
+                description: document.querySelector('textarea[name=description]').value,
+                distance: document.querySelector('input[name=distance]').value,
+            })
+
+            // Send to API
+            await fetch("http://localhost:3005/sightings/", { method: 'POST', body: body_content, headers: headers_list }).then(response => {
+                if (response.ok) {
+                    // Return to map
+                    window.location.href = "http://localhost:5500/pages/public_map_sightings.html"
+                } else {
+                    // Throw error
+                    throw new Error(`HTTP error, status = ${response.status}`);
+                }
+            }).catch(error => console.error(error))
+        }
+
+        // Call submit_sighting(e) each time button is pressed.
+        document.querySelector('.sighting').addEventListener('submit', (e) => submit_sighting(e))
+    </script>
+</body>
+</html>

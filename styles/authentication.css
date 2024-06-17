@@ -1,0 +1,19 @@
+.authentication {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--dark-100);
+}
+
+.authentication input {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px;
+    border: 2px solid var(--purple);
+    background-color: transparent;
+    color: var(--white);
+}

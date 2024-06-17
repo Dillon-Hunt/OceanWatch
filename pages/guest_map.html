@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Guest Map</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+    <link rel='stylesheet' href='../styles/index.css'>
+    <link rel='stylesheet' href='../styles/map.css'>
+
+    <script defer src="../scripts/utils.js"></script>
+    <script defer src='../scripts/create_map.js'></script>
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+
+    <a class='view_sightings' href='./public_map_sightings.html'>View Sightings</a>
+
+    <div class="content">
+        <a class="top_right" href='./login.html'>Log In</a>
+    </div>
+    
+    <div class="attack">
+        <h2>Attack Information</h2>
+        <img src="" class="attack__image" />
+        <p class="attack__common_name">Common Name: </p>
+        <p class="attack__scientific_name">Scientific Name: </p>
+        <p class="attack__location">Location: </p>
+        <p class="attack__longitude">Longitude: </p>
+        <p class="attack__latitude">Latitude: </p>
+        <p class="attack__date">Date: </p>
+    </div>
+
+    <div class='map' id='map'></div>
+</body>
+</html>

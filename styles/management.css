@@ -1,0 +1,59 @@
+.manage {
+    padding: 80px;
+}
+
+.manage__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.manage__links a {
+    position: relative;
+    padding: 0 0 0 15px;
+}
+
+.manage__links a::before {
+    content: '';
+    height: 5px;
+    width: 5px;
+    top: 50%;
+    left: 0;
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--white);
+    transform: translateY(-50%);
+}
+
+h3 {
+    margin: 20px 0 0 0;
+}
+
+.sightings {
+    gap: 10px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sightings div {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: var(--dark-90);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.sightings div p {
+    margin: 0;
+}
+
+.sightings div button {
+    color: var(--white);
+    background-color: var(--purple);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}

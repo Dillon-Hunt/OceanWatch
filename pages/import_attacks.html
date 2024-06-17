@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Import Attacks</title>
+
+    <link rel='stylesheet' href='../styles/index.css'>
+    <link rel='stylesheet' href='../styles/import_attacks.css'>
+
+    <script defer src="../scripts/import_attacks.js"></script>
+
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+    <script>
+        if (sessionStorage.getItem('token') === null) window.location = './guest_map.html'
+        else if (!Number(sessionStorage.getItem('verified'))) window.location = './public_map.html'
+
+        async function validate_user() {
+            const headers_list = {
+                'Accept': '*/*',
+                'Content-Type': 'application/json'
+            }
+
+            const body_content = JSON.stringify({
+                'token': sessionStorage.getItem('token')
+            })
+
+            response = await fetch('http://localhost:3005/auth/validate', { method: 'POST', body: body_content, headers: headers_list })
+                .then(response => {
+                    if (response.status === 401) {
+                        sessionStorage.clear()
+                        window.location.href = '../pages/guest_map.html'
+                    } else {
+                        response.json().then(data => {
+                            if (!data.verified) {
+                                window.location.href = '../pages/login.html'
+                            }
+                        })
+                    }
+                })
+                .catch((error) => console.error(error))
+        }
+
+        validate_user()
+    </script>
+
+    <div class='import'>
+        <h2>Import Data</h2>
+        <form class='import__box'>
+            <input class='import__box__file' type='file' accept='.xlsx' required='required' multiple=false />
+            <label class="import__box__text" for='file'><strong>Choose a file</strong><span> or drag it here</span>.</label>
+            <p class="import__box__name">File name</p>
+
+            <button class="import__upload" for='file' type='submit'>
+                <p class="import__upload__text">Upload</p>
+            </button>
+        </form>
+    </div>
+</body>
+</html>

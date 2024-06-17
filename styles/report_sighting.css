@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.map::after {
+    content: '';
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fclipart-map-pin-point-6.png&f=1&nofb=1&ipt=2cbe438d84f7abe60248647adcb40522ae134e1459db24e25047a75f0e5f4586&ipo=images');
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -100%;
+    width: 30px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+}
+
+.left {
+    height: 100vh;
+    width: 50vw;
+    padding: 20px;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.mapboxgl-ctrl-bottom-left, .mapboxgl-ctrl-bottom-right, .mapboxgl-ctrl-geocoder--powered-by {
+    display: none !important;
+}   
+
+.right {
+    height: 100vh;
+    width: 50vw;
+    padding: 20px;
+}
+
+.sighting__title {
+    margin-bottom: 40px;
+}
+
+.sighting__information {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sighting__information__input {
+    width: 100%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sighting__information__input__coordinates, .sighting__information__input__date {
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.sighting__information__input input {
+    width: 100%;
+}
+
+.sighting__information__submit {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+}

@@ -1,0 +1,221 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "/Users/DHunt/Programming/OceanWatch",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2023-04-17 14:43:44",
+            "filesum": 31,
+            "codesum": 1071,
+            "commentsum": 9,
+            "blanksum": 178,
+            "statistics": {
+                ".html": {
+                    "code": 445,
+                    "comment": 0,
+                    "blank": 71
+                },
+                ".css": {
+                    "code": 384,
+                    "comment": 1,
+                    "blank": 58
+                },
+                ".js": {
+                    "code": 242,
+                    "comment": 8,
+                    "blank": 49
+                }
+            },
+            "filelist": [
+                {
+                    "filename": "assets/hero.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "index.html"
+                },
+                {
+                    "blank": 11,
+                    "code": 61,
+                    "comment": 0,
+                    "filename": "pages/admin_map.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "pages/authentication.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "pages/guest_map.html"
+                },
+                {
+                    "blank": 9,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "pages/import_attacks.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "pages/login.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "pages/manage_animals.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "pages/manage_sharks.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "pages/manage_species.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "pages/manage_users.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "pages/management.html"
+                },
+                {
+                    "blank": 10,
+                    "code": 61,
+                    "comment": 0,
+                    "filename": "pages/public_map.html"
+                },
+                {
+                    "blank": 7,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "pages/report_sighting.html"
+                },
+                {
+                    "blank": 9,
+                    "code": 59,
+                    "comment": 0,
+                    "filename": "pages/signup.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "scripts/authentication.js"
+                },
+                {
+                    "blank": 18,
+                    "code": 63,
+                    "comment": 4,
+                    "filename": "scripts/create_map.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 39,
+                    "comment": 1,
+                    "filename": "scripts/import_attacks.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "scripts/login.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "scripts/report_sighting.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "scripts/signup.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 30,
+                    "comment": 2,
+                    "filename": "scripts/utils.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "styles/authentication.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 66,
+                    "comment": 0,
+                    "filename": "styles/home.css"
+                },
+                {
+                    "blank": 9,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "styles/import_attacks.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 42,
+                    "comment": 1,
+                    "filename": "styles/index.css"
+                },
+                {
+                    "blank": 14,
+                    "code": 85,
+                    "comment": 0,
+                    "filename": "styles/login_signup.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "styles/management.css"
+                },
+                {
+                    "blank": 11,
+                    "code": 73,
+                    "comment": 0,
+                    "filename": "styles/map.css"
+                },
+                {
+                    "blank": 9,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "styles/report_sighting.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "templates/template.html"
+                }
+            ]
+        }
+    ]
+}

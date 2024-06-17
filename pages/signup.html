@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Sign Up</title>
+
+    <link rel='stylesheet' href='../styles/index.css' />
+    <link rel='stylesheet' href='../styles/login_signup.css' />
+
+    <script defer src='../scripts/utils.js'></script>
+    <script defer src='../scripts/signup.js'></script>
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+    <section class='left'>
+        <a href='../index.html' class='back_arrow'>< Home</a>
+        <div class="fact">
+            <h2>DID YOU KNOW?</h2>
+            <p class="random_fact"></p>
+        </div>
+    </section>
+    <section class='right'>
+        <form class='user'>
+            <h1 class='user__title'>Sign Up</h1>
+
+            <div class='user__information'>
+                <div class='user__information__input__name'>
+                    <div class='user__information__input'>
+                        <label for='first_name'>First Name</label>
+                        <input placeholder='Enter First Name' name='first_name' type='text' required />
+                    </div>
+                
+                    <div class='user__information__input'>
+                        <label for='last_name'>Last Name</label>
+                        <input placeholder='Enter Last Name' name='last_name' type='text' required />
+                    </div>
+                </div>
+            
+                <div class='user__information__input'>
+                    <label for='username'>Username</label>
+                    <input placeholder='Enter Username' name='username' type='text' required />
+                </div>
+            
+                <div class='user__information__input'>
+                    <label for='email'>Email Address</label>
+                    <input placeholder='Enter email' name='email' type='text' pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
+                </div>
+            
+                <div class='user__information__input'>
+                    <label for='password'>Password</label>
+                    <input placeholder='Enter Password' name='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters' type='password' required />
+                </div>
+                
+                <div class='user__information__input'>
+                    <label for='password_confirmation'>Confirm Password</label>
+                    <input placeholder='Confirm Password' name='password_confirmation' name='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters' type='password' required />
+                </div>
+            </div>
+        
+            <div class='user__submit'>
+                <button class='user__submit__button' type='submit'>Sign Up</button>
+                <a href='./login.html'>Already Have an Account?</a>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

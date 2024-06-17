@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>OceanWatch | Authentication</title>
+
+    <link rel='stylesheet' href='../styles/index.css'>
+    <link rel='stylesheet' href='../styles/authentication.css'>
+
+    <script defer src="../scripts/authentication.js"></script>
+</head>
+<body>
+    <img src='../assets/Queensland_Government.png' class='government_logo' alt='Queensland Government' />
+    <script>
+        if (sessionStorage.getItem('token') === null) window.location = './login.html'
+    </script>
+    <form class="authentication">
+        <p>Enter 6 Digit Verification Code</p>
+        <input class='authentication__input' placeholder='XXX XXX' pattern='^[A-Za-z0-9]{6}' minlength='6' maxlength='6' type='text' required />
+    </form>
+</body>
+</html>
